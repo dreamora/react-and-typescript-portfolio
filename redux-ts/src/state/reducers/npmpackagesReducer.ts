@@ -7,7 +7,13 @@ interface NPMPackageState {
     data: string[]
 }
 
-const reducer = (state: NPMPackageState,
+const initialState = {
+    loading: false,
+    error: null,
+    data: []
+}
+
+const reducer = (state: NPMPackageState = initialState,
                  action: Action
 ): NPMPackageState => {
     switch (action.type) {
